@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../src/output.css" rel="stylesheet">
+    <style>
+        .gradientColor {
+            background: linear-gradient(to right,#645FCE,#40356F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+
+</head>
+<body class="bg-neutral-900 w-screen">
+
+    <nav class=" w-screen flex top-[0] fixed  h-32 items-center justify-center" style="backdrop-filter: blur(35px);">
+        <div class="grid grid-cols-2 gap-10 " id="gauche_navbar">
+            <ul class="text-xl text-white hover:text-[#40356F]"><a href="#">Qui sommes nous ?</a></ul>
+            <ul class="text-xl text-white hover:text-[#40356F]"><a href="#">Nous contactés</a></ul>
+        </div>
+        <div class="justify-center items-center w-56 overflow-hidden">
+            <div class=" ml-6 ">
+                <img src="../assets/img/logo.png" class="h-16 w-auto" alt="">
+            </div>
+            <h1 class="text-xl text-white nunito">Data-X Système</h1>
+        </div>
+        <div class="grid grid-cols-2 gap-10  " id="droite_navbar">
+            <ul class="text-xl text-white hover:text-[#40356F]"><a href="#">En savoir plus</a></ul>
+            <ul class="text-xl text-white hover:text-[#40356F]"><a href="#">En savoir plus</a></ul>
+        </div>
+    </nav>
+
+
+    <div class="mt-64 text-center"></div>
+    <h1 class="text-white mb-4 text-[4rem] font-bold tracking-tight leading-none text-center">
+            <span class="gradientColor">Data-x Système </span>  
+        </h1>
+        <p class="w-[32rem] mx-auto text-white text-mb mt-4 text-center">
+            Optez pour notre bot Discord afin de renforcer la sécurité de vos serveurs et garantir une expérience sans faille à vos membres!
+        </p>
+        <div class="w-screen mx-auto flex items-center justify-center">
+            <button class="bg-gradient-to-r from-[#645FCE] to-[#40356F] hover:from-[#40356F] hover:to-[#645FCE] text-white py-2 px-4 rounded-md mt-4 transition duration-300 ease-in-out">
+                Ajouter le bot
+            </button>
+
+        </div>
+    </div>
+    
+</body>
+</html>
