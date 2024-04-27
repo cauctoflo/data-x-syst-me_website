@@ -1,0 +1,59 @@
+{
+    "Nom": "Data-X System",
+    "sousnav": [
+    {
+    "description": "Opt for our Discord bot to enhance the security of your servers and ensure a seamless experience for your members!"
+    }
+    ],
+    "Bouton": "Add the bot",
+    "Fonctionnalité": {
+    "1": {
+    "title": "Security",
+    "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+    "Bouton": "Learn more"
+    },
+    "2": {
+    "title": "Security",
+    "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+    "Bouton": "Learn more"
+    },
+    "3": {
+    "title": "Security",
+    "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+    "Bouton": "Learn more"
+    },
+    "4": {
+    "title": "Security",
+    "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+    "Bouton": "Learn more"
+    },
+    "5": {
+    "title": "Security",
+    "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+    "Bouton": "Learn more"
+    },
+    "6": {
+    "title": "Security",
+    "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+    "Bouton": "Learn more"
+    }
+    },
+    "Stats": {
+    "Servers": "100",
+    "Users": "7050",
+    "Partners": "2",
+    "Analysts": "5"
+    },
+    "Contact": {
+    "Title": "Contact us",
+    "Description": "Have questions or need assistance? Feel free to contact us, our team will be delighted to assist you.",
+    "Username": "Username",
+    "Email": "Email",
+    "Subject": "Subject",
+    "Message": "Message",
+    "Button": "Send message"
+    },
+    "Footer": {
+    "Description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+    }
+    }

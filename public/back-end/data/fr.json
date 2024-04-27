@@ -1,0 +1,60 @@
+{
+    "Nom": "Data-X Système",
+    "sousnav": [
+        {
+            "description": "Optez pour notre bot Discord afin de renforcer la sécurité de vos serveurs et garantir une expérience sans faille à vos membres!"
+        }
+    ],
+    "Bouton": "Ajoutez le bot",
+    "FonctionnalitéTitle": "Fonctionnalité",
+    "Fonctionnalité": {
+        "1": {
+            "title": "Sécurité",
+            "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+            "Bouton": "En savoir plus"
+        },
+        "2": {
+            "title": "Sécurité",
+            "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+            "Bouton": "En savoir plus"
+        },
+        "3": {
+            "title": "Sécurité",
+            "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+            "Bouton": "En savoir plus"
+        },
+        "4": {
+            "title": "Sécurité",
+            "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+            "Bouton": "En savoir plus"
+        },
+        "5": {
+            "title": "Sécurité",
+            "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+            "Bouton": "En savoir plus"
+        },
+        "6": {
+            "title": "Sécurité",
+            "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?",
+            "Bouton": "En savoir plus"
+        }
+    },
+    "Stats": {
+        "Servers": "100",
+        "Users": "7050",
+        "Partners": "2",
+        "Analysts": "5"
+    },
+    "Contact": {
+        "Title": "Nous contacter",
+        "Description": "Vous avez des questions ou besoin d'aide ? N'hésitez pas à nous contacter, notre équipe sera ravie de vous répondre.",
+        "Pseudo": "Pseudo",
+        "Email": "Email",
+        "Sujet": "Sujet",
+        "Message": "Message",
+        "Bouton": "Envoyer un message"
+    },
+    "Footer": {
+        "Description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+    }
+}

@@ -1,3 +1,15 @@
+<?php 
+include_once 'public/back-end/JsonClass.php';
+// Fetch data from JSON file
+$data = lireFichierJSON('public/back-end/data/fr.json');
+// Render the HTML template with the fetched data
+// echo json_encode($data);
+
+
+?>
+
+
+
 <!doctype html>
 <html>
    <head>
@@ -17,7 +29,7 @@
          }
       </style>
    </head>
-   <body class="bg-neutral-900 max-w-screen mx-auto">
+   <body class="bg-neutral-900 max-w-screen  mx-auto">
       <nav class="z-10 bg-neutral-900  w-screen flex top-[0] fixed  h-32 items-center justify-center" style="backdrop-filter: blur(35px);">
          <div class="grid grid-cols-2 gap-10 " id="gauche_navbar">
             <ul class="text-xl text-white hover:text-[#40356F]"><a href="#">Qui sommes nous ?</a></ul>
@@ -27,7 +39,7 @@
             <div class=" ml-6 ">
                <img src="../assets/img/logo.png" class="h-16 w-auto" alt="">
             </div>
-            <h1 class="text-xl text-white nunito">Data-X Système</h1>
+            <h1 class="text-xl text-white nunito"><?php  echo $data['Nom']; ?></h1>
          </div>
          <div class="grid grid-cols-2 gap-10  " id="droite_navbar">
             <ul class="text-xl text-white hover:text-[#40356F]"><a href="#">Nos partenaires</a></ul>
@@ -36,28 +48,33 @@
       </nav>
       <div class=" h-[20rem] text-center"></div>
       <h1 class="text-white mb-4 text-[4rem] font-bold tracking-tight leading-none text-center">
-         <span class="gradientColor">Data-x Système </span>  
+         <span class="gradientColor"><?php  echo $data['Nom']; ?> </span>  
       </h1>
       <p class="w-[32rem] mx-auto text-white text-mb mt-4 text-center">
-         Optez pour notre bot Discord afin de renforcer la sécurité de vos serveurs et garantir une expérience sans faille à vos membres!
-      </p>
+      <?php echo $data['sousnav'][0]['description']; ?>
+
+       </p>
       <div class=" mx-auto flex items-center justify-center">
          <button class="bg-gradient-to-r from-[#645FCE] to-[#40356F] hover:from-[#40356F] hover:to-[#645FCE] text-white py-2 px-4 rounded-md mt-4 transition duration-300 ease-in-out">
          Ajouter le bot
          </button>
       </div>
       </div>
+
+
       <div class="mt-64 bg-white ">
          <div class="-z-1 pt-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex felx-col items-center justify-center">
                <span
                   class="rounded-full bg-indigo-500 px-2 py-1 text-white uppercase text-sm"
                   >
-               Data-X Système
+               <?php  echo $data['Nom']; ?>
                </span>
             </div>
             <div class="border-b-4 border-[#40356F] w-[24rem] mx-auto mb-10">
-               <h1 class="font-bold text-4xl uppercase mb-7 relative text-center text-gray-700 poppins">Fonctionnalités</h1>
+               <h1 class="font-bold text-4xl uppercase mb-7 relative text-center text-gray-700 poppins">
+               <?php echo $data['FonctionnalitéTitle']; ?>
+            </h1>
             </div>
          </div>
          <div class="p-8">
@@ -66,8 +83,8 @@
 
                <div class="p-8 hover:bg-indigo-100  hover:cursor-pointer rounded-lg transition-all duration-300 ease-in-out" 
                 data-aos="fade-right"
-                data-aos-offset="300"
-                data-aos-easing="ease-in-sine">
+                data-aos-easing="linear"
+               data-aos-duration="300">
                
                   <div
                      class="bg-indigo-100 rounded-full w-16 h-16 flex justify-center items-center text-indigo-500 shadow-2xl"
@@ -77,14 +94,13 @@
                      </div>
                   </div>
                   <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3">
-                     Sécurité 
+                  <?php echo $data['Fonctionnalité']['1']['title']; ?>
                   </h2>
                   <p class="font-light text-sm text-gray-500 mb-3">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! 
-                     Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?
-                  </p>
+                  <?php echo $data['Fonctionnalité']['1']['Description']; ?>                  
+               </p>
                   <a class="text-indigo-500 flex items-center hover:text-indigo-600" href="/">
-                     En savoir plus
+                  <?php echo $data['Fonctionnalité']["1"]['Bouton']; ?>
                      <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-5 w-5"
@@ -111,14 +127,12 @@
                      </div>
                   </div>
                   <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3">
-                     Sécurité 
+                  <?php echo $data['Fonctionnalité']['2']['title']; ?>
                   </h2>
                   <p class="font-light text-sm text-gray-500 mb-3">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! 
-                     Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?
-                  </p>
+                  <?php echo $data['Fonctionnalité']['2']['Description']; ?>                  </p>
                   <a class="text-green-500 flex items-center hover:text-green-600" href="/">
-                     En savoir plus
+                  <?php echo $data['Fonctionnalité']['2']['Bouton']; ?>
                      <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-5 w-5"
@@ -145,14 +159,12 @@
                      </div>
                   </div>
                   <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3">
-                     Sécurité 
+                     <?php echo $data['Fonctionnalité']['3']['title']; ?>
                   </h2>
                   <p class="font-light text-sm text-gray-500 mb-3">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! 
-                     Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?
-                  </p>
+                  <?php echo $data['Fonctionnalité']['3']['Description']; ?>                  </p>
                   <a class="text-red-500 flex items-center hover:text-red-600" href="/">
-                     En savoir plus
+                  <?php echo $data['Fonctionnalité']['3']['Bouton']; ?>
                      <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-5 w-5"
@@ -183,14 +195,12 @@
                   </div>
                </div>
                <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3">
-                  Sécurité 
+               <?php echo $data['Fonctionnalité']['4']['title']; ?>
                </h2>
                <p class="font-light text-sm text-gray-500 mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! 
-                  Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?
-               </p>
+               <?php echo $data['Fonctionnalité']['4']['Description']; ?>               </p>
                <a class="text-indigo-500 flex items-center hover:text-indigo-600" href="/">
-                  En savoir plus
+               <?php echo $data['Fonctionnalité']['4']['Bouton']; ?>
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      class="h-5 w-5"
@@ -217,14 +227,12 @@
                   </div>
                </div>
                <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3">
-                  Sécurité 
+               <?php echo $data['Fonctionnalité']['5']['title']; ?>
                </h2>
                <p class="font-light text-sm text-gray-500 mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! 
-                  Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?
-               </p>
+               <?php echo $data['Fonctionnalité']['5']['Description']; ?>               </p>
                <a class="text-green-500 flex items-center hover:text-green-600" href="/">
-                  En savoir plus
+               <?php echo $data['Fonctionnalité']['5']['Bouton']; ?>
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      class="h-5 w-5"
@@ -251,14 +259,13 @@
                   </div>
                </div>
                <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3">
-                  Sécurité 
+               <?php echo $data['Fonctionnalité']['6']['title']; ?>
                </h2>
                <p class="font-light text-sm text-gray-500 mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit dicta nostrum ad obcaecati! 
-                  Minima quidem esse ipsum repellendus earum maxime ut consequatur, illo id ullam qui praesentium, voluptas eius?
-               </p>
+               <?php echo $data['Fonctionnalité']['6']['Description']; ?>    
+                       </p>
                <a class="text-red-500 flex items-center hover:text-red-600" href="/">
-                  En savoir plus
+               <?php echo $data['Fonctionnalité']['6']['Bouton']; ?>
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      class="h-5 w-5"
@@ -399,7 +406,7 @@ name='subject'                         class="w-full rounded-md py-2.5 px-4 bord
           <div class="sm:col-span-2">
             <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
               <img src="../assets/img/logo.png" class="w-10" alt="">
-              <span class="ml-2 text-xl font-bold tracking-wide text-[#40356F] uppercase">Data-X Système</span>
+              <span class="ml-2 text-xl font-bold tracking-wide text-[#40356F] uppercase"><?php  echo $data['Nom']; ?></span>
             </a>
             <div class="mt-6 lg:max-w-sm">
               <p class="text-sm text-gray-400">
@@ -456,7 +463,7 @@ name='subject'                         class="w-full rounded-md py-2.5 px-4 bord
         </div>
         <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
           <p class="text-sm text-gray-600">
-            © Copyright 2024 Data-X Système. All rights reserved.
+            © Copyright 2024 <?php  echo $data['Nom']; ?>. All rights reserved.
           </p>
           <p class="text-sm text-gray-600">
             <a href="https://github.com/cauctoflo">
@@ -487,7 +494,7 @@ name='subject'                         class="w-full rounded-md py-2.5 px-4 bord
 
     <script>
         function serveursCount() {
-            var n = 38; // Nombre final du compteur
+            var n = <?php echo $data['Stats']['Servers']; ?>; // Nombre final du compteur
             var cpt = 0; // Initialisation du compteur
             var duree = 3; // Durée en seconde pendant laquel le compteur ira de 0 à 15 (divisée par 10)
             var delta = Math.ceil((duree * 1000) / n);
@@ -504,7 +511,7 @@ name='subject'                         class="w-full rounded-md py-2.5 px-4 bord
             countdown(); // Lancement du compteur au chargement de la page
         }
         function usersCount() {
-            var n = 7042; // Nombre final du compteur
+            var n = <?php echo $data['Stats']['Users']; ?>; // Nombre final du compteur
             var cpt = 0; // Initialisation du compteur
             var duree = 0.00002; // Durée en seconde pendant laquel le compteur ira de 0 à 15 (divisée par 10)
             var delta = Math.ceil((duree * 1000) / n);
@@ -521,7 +528,7 @@ name='subject'                         class="w-full rounded-md py-2.5 px-4 bord
             countdown(); // Lancement du compteur au chargement de la page
         }
         function partnerCount() {
-            var n = 2; // Nombre final du compteur
+            var n = <?php echo $data['Stats']['Partners']; ?>; // Nombre final du compteur
             var cpt = 0; // Initialisation du compteur
             var duree = 0.09; // Durée en seconde pendant laquel le compteur ira de 0 à 15 (divisée par 10)
             var delta = Math.ceil((duree * 1000) / n);
@@ -540,7 +547,7 @@ name='subject'                         class="w-full rounded-md py-2.5 px-4 bord
             countdown(); // Lancement du compteur au chargement de la page
         }
         function analysteCount() {
-            var n = 5; // Nombre final du compteur
+            var n = <?php echo $data['Stats']['Analysts']; ?>; // Nombre final du compteur
             var cpt = 0; // Initialisation du compteur
             var duree = 0.09; // Durée en seconde pendant laquel le compteur ira de 0 à 15 (divisée par 10)
             var delta = Math.ceil((duree * 1000) / n);
