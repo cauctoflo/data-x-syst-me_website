@@ -1,7 +1,13 @@
 <?php 
+
+// Store the data in session
+$language = $_SESSION['language']  ;
+
+var_dump($language);
 include_once 'public/back-end/JsonClass.php';
 // Fetch data from JSON file
-$data = lireFichierJSON('public/back-end/data/fr.json');
+$data = lireFichierJSON('public/back-end/data/'. $language . '.json');
+
 // Render the HTML template with the fetched data
 // echo json_encode($data);
 
@@ -290,25 +296,25 @@ $data = lireFichierJSON('public/back-end/data/fr.json');
                 <div class="text-center">
                     <h1 class="text-5xl hover:text-indigo-500 cursor-pointer text-white poppins font-bold"> <a href="https://discord.com/oauth2/authorize?client_id=1107957516039630940"><p id="compteurServer">0</p></a> </h1>
                     <span class="rounded-full bg-indigo-500 px-2 py-1 text-white uppercase text-md">
-                    Serveurs
+                    <?php echo $data['Stats']['S']; ?>
                     </span>
                 </div>                
                 <div class="text-center">
                     <h1 class="text-5xl hover:text-red-500 cursor-pointer  text-white poppins font-bold"><a href="https://discord.com/oauth2/authorize?client_id=1107957516039630940"><p id="compteurUser">0</p></a></h1>
                     <span class="rounded-full bg-red-500 px-2 py-1 text-white uppercase text-md">
-                        Utilisateurs
+                    <?php echo $data['Stats']['U']; ?>
                         </span>
                 </div>                
                 <div class="text-center">
                     <h1 class="text-5xl hover:text-green-500 cursor-pointer text-white poppins font-bold"><a href="/partner"><p id="compteurPartner">0</p></a> </h1>
                     <span class="rounded-full bg-green-500 px-2 py-1 text-white uppercase text-md">
-                        Partenaire
+                    <?php echo $data['Stats']['P']; ?>
                         </span>
                 </div>                
                 <div class="text-center">
                     <h1 class="text-5xl hover:text-pink-500 cursor-pointer text-white poppins font-bold"><a href="http://zpoq.fr/data-x-systeme"><p id="compteurAnalyste">0</p></a> </h1>
                     <span class="rounded-full bg-pink-500 px-2 py-1 text-white uppercase text-md">
-                        Data-X Analyste
+                    <?php echo $data['Stats']['A']; ?>
                         </span>
                 </div>
 
@@ -316,15 +322,21 @@ $data = lireFichierJSON('public/back-end/data/fr.json');
         </div>
 
       </div>
-      <div class="bg-white h-[8rem]" id="contact"></div>
-      <div class="bg-white p-8 rounded-lg shadow-md"  >
-        <div  class="my-6" data-aos="fade-right"
+      <div class="bg-white">
+      <div class="bg-white"
+      data-aos="fade-right"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine">
+      >
+      <div class="bg-white h-[3rem]" id="contact"></div>
+      <div class="bg-white p-8 rounded-lg shadow-md"  >
+        <div  class="my-6" >
             <div class="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-[#333] font-[sans-serif]">
                 <div>
-                    <h1 class="text-3xl font-extrabold">Nous contactés</h1>
-                    <p class="text-sm text-gray-400 mt-3">Vous avez une grande idée ou une marque à développer et vous avez besoin d'aide ? N'hésitez pas à nous contacter, nous serions ravis d'entendre parler de votre projet et de vous aider.</p>
+                    <h1 class="text-3xl font-extrabold"><?php echo $data['Contact']['Title']; ?></h1>
+                    <p class="text-sm text-gray-400 mt-3">
+                    <?php echo $data['Contact']['Description']; ?>
+                  </p>
                     <div class="mt-12">
                         <h2 class="text-lg font-extrabold">Email</h2>
                         <ul class="mt-3">
@@ -345,7 +357,7 @@ $data = lireFichierJSON('public/back-end/data/fr.json');
                         </ul>
                     </div>
                     <div class="mt-12">
-                        <h2 class="text-lg font-extrabold">Réseaux Sociaux</h2>
+                        <h2 class="text-lg font-extrabold"><?php echo $data['Contact']['Social']; ?></h2>
                         <ul class="flex mt-3 space-x-4">
                             <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                                 <a href="javascript:void(0)">
@@ -382,21 +394,23 @@ $data = lireFichierJSON('public/back-end/data/fr.json');
                 </div>
               
                 <form action="/contact/save" method="post" class="ml-auo space-y-4">
-                    <input type='text' name ="pseudo" placeholder='pseudo'
+                    <input type='text' name ="pseudo" placeholder='<?php echo $data['Contact']['Pseudo']; ?>'
                         class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#40356F]" />
                     <input type='email' 
                            name='email'
-                           placeholder='Email'
+                           placeholder='<?php echo $data['Contact']['Email']; ?>'
                         class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#40356F]" />
-                    <input type='text' placeholder='Sujet'
+                    <input type='text' placeholder='<?php echo $data['Contact']['Sujet']; ?>'
 name='subject'                         class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#40356F]" />
-                    <textarea placeholder='Message' rows="6"
+                    <textarea placeholder='<?php echo $data['Contact']['Message']; ?>' rows="6"
                               name='message'
                         class="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#40356F]"></textarea>
                     <button type='button' type="submit"
-                        class="text-white bg-gradient-to-r from-[#645FCE] to-[#40356F] font-semibold rounded-md text-sm px-4 py-2.5 w-full">Envoyer</button>
+                        class="text-white bg-gradient-to-r from-[#645FCE] to-[#40356F] font-semibold rounded-md text-sm px-4 py-2.5 w-full"><?php echo $data['Contact']['Bouton']; ?></button>
                 </form>
             </div>
+        </div>
+        </div>
         </div>
 
       </div>
@@ -483,6 +497,7 @@ name='subject'                         class="w-full rounded-md py-2.5 px-4 bord
             </li>
           </ul>
         </div>
+      </div>
       </div>
       
 </footer>
